@@ -1,5 +1,8 @@
+// ignore_for_file: unnecessary_new
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:recipe_app/presentation/screens/sign_in.dart';
 
 class Intro extends StatelessWidget {
   const Intro({super.key});
@@ -15,7 +18,7 @@ class Intro extends StatelessWidget {
           Column(
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height / 8 * deviceHeightCoef,
+                height: MediaQuery.of(context).size.height / 12 * deviceHeightCoef,
               ),
               Image.asset(
                 'assets/icons/chefshat.png',
@@ -28,7 +31,7 @@ class Intro extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.white),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * .273 * deviceHeightCoef,
+                height: MediaQuery.of(context).size.height * .243 * deviceHeightCoef,
               ),
               Text(
                 'Get \nCooking',
@@ -42,13 +45,16 @@ class Intro extends StatelessWidget {
               ),
               Text(
                 'Simple way to find Tasty Recipe',
-                style: Theme.of(context).textTheme.bodySmall!.copyWith(color: Colors.white),
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.white),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * .019 * deviceHeightCoef,
+                height: MediaQuery.of(context).size.height * .119 * deviceHeightCoef,
               ),
               ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context, MaterialPageRoute(builder: (BuildContext context) => const SignIn()));
+                  },
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [

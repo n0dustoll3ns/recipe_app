@@ -22,10 +22,24 @@ class RecipeApp extends StatelessWidget {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
               padding: const EdgeInsets.symmetric(horizontal: 43, vertical: 11)),
         ),
+        inputDecorationTheme: InputDecorationTheme(
+            contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+            hintStyle: GoogleFonts.poppins(
+                fontWeight: FontWeight.w400, fontSize: 11, letterSpacing: 0, color: const Color(0xFFD9D9D9)),
+            focusedBorder: const OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              borderSide: BorderSide(color: Color(0xCC129575), width: 2.5),
+            ),
+            enabledBorder: const OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              borderSide: BorderSide(color: Color(0xFFD9D9D9), width: 1.5),
+            )),
         textTheme: TextTheme(
-          displayMedium: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 50, letterSpacing: 0),
+          displayMedium:
+              GoogleFonts.poppins(height: 1.2, fontWeight: FontWeight.w600, fontSize: 50, letterSpacing: 0),
           titleMedium: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 18, letterSpacing: 0),
-          bodySmall: GoogleFonts.poppins(fontWeight: FontWeight.w400, fontSize: 16, letterSpacing: 0),
+          bodyMedium: GoogleFonts.poppins(fontWeight: FontWeight.w400, fontSize: 16, letterSpacing: 0),
+          bodySmall: GoogleFonts.poppins(fontWeight: FontWeight.w400, fontSize: 14, letterSpacing: 0),
         ),
         primarySwatch: const MaterialColor(0xFF129575, {
           50: Color(0x18129575),
