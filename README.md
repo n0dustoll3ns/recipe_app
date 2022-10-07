@@ -1,6 +1,6 @@
 # recipe_app
 
-A new Flutter project.
+This project demostrates recipes from different kitchen and navigation around different types of elements and information
 
 ## Getting Started
 
