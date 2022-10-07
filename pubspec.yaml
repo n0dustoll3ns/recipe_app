@@ -13,13 +13,19 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  flutter_svg: ^1.1.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  google_fonts: ^3.0.1
 
 flutter:
+  assets:
+    - assets/images/intro.png
+    - assets/icons/chefshat.png
+    - assets/icons/arrow-right.svg
 
   uses-material-design: true
 
