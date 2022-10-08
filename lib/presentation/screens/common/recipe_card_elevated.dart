@@ -1,38 +1,96 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipe_app/platform/size_config.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class ElevatedRecipeCard extends StatelessWidget {
-  const ElevatedRecipeCard({super.key, required this.rating, required this.name, required this.img});
-  final double rating;
-  final String name;
-  final String img;
+import '../../../model/meal.dart';
+
+class MealCard extends StatelessWidget {
+  const MealCard({super.key, required this.meal});
+  final Meal meal;
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: AlignmentDirectional.center,
-      children: [
-        Column(
-          mainAxisSize: MainAxisSize.min,
+    return SizedBox(
+      width: SizeConfig.blockSizeHorizontal * 40.266,
+      child: Card(
+        elevation: 0,
+        child: Stack(
+          alignment: AlignmentDirectional.center,
+          fit: StackFit.expand,
           children: [
-            SizedBox(
-              height: SizeConfig.blockSizeVertical * 6.773,
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(
+                  height: SizeConfig.blockSizeVertical * 6.773,
+                ),
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      color: Color(0xffD9D9D9),
+                    ),
+                    height: SizeConfig.blockSizeVertical * 36.182,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                color: Color(0xffD9D9D9),
-              ),
-              height: SizeConfig.blockSizeVertical * 21.182,
-            ),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Center(
+                    child:
+                        ClipRRect(borderRadius: BorderRadius.circular(99), child: Image.asset(meal.image))),
+                Text(
+                  meal.name,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xff484848)),
+                ),
+                Spacer(),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 2.667),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Time',
+                            style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xffA9A9A9)),
+                          ),
+                          Text(
+                            '${meal.duration.inMinutes} Mins',
+                            style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xff484848)),
+                          ),
+                        ],
+                      ),
+                      Spacer(),
+                      Container(
+                          width: SizeConfig.blockSizeHorizontal * 6.4,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Transform.scale(
+                              scale: 0.7, child: SvgPicture.asset('assets/icons/favorite.svg')))
+                    ],
+                  ),
+                )
+              ],
+            )
           ],
         ),
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [Image.asset(img)],
-        )
-      ],
+      ),
     );
   }
 }

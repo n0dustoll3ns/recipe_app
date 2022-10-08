@@ -23,7 +23,7 @@ class Home extends StatelessWidget {
         Spacer(flex: 2),
         NationalCuisine(),
         Spacer(flex: 2),
-        PopularRecipes(),
+        SizedBox(height: SizeConfig.blockSizeVertical * 36.448, child: PopularRecipes()),
         Spacer(flex: 2),
         NewRecipes(),
         Spacer(flex: 2),
