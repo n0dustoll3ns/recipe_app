@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:google_fonts/google_fonts.dart';
+import 'package:recipe_app/platform/size_config.dart';
 import 'presentation/screens/introduction.dart';
 
 void main() {
@@ -12,6 +13,7 @@ class RecipeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig(context);
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
