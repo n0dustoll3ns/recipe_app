@@ -26,6 +26,8 @@ flutter:
     - assets/images/intro.png
     - assets/icons/chefshat.png
     - assets/icons/arrow-right.svg
+    - assets/icons/google_logo.svg
+    - assets/icons/facebook_logo.svg
 
   uses-material-design: true
 

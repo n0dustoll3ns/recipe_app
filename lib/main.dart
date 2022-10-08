@@ -13,7 +13,6 @@ class RecipeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig(context);
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
@@ -22,8 +21,7 @@ class RecipeApp extends StatelessWidget {
           style: ElevatedButton.styleFrom(
               textStyle: GoogleFonts.poppins(
                   fontWeight: FontWeight.w600, fontSize: 16, letterSpacing: 0, color: Colors.white),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              padding: const EdgeInsets.symmetric(horizontal: 43, vertical: 11)),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
         ),
         inputDecorationTheme: InputDecorationTheme(
             contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 18),

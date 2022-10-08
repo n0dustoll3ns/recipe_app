@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:recipe_app/platform/size_config.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -13,8 +14,8 @@ class SignIn extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * .1,
+            Spacer(
+              flex: 11,
             ),
             Text('Hello,',
                 style: GoogleFonts.poppins(
@@ -28,9 +29,7 @@ class SignIn extends StatelessWidget {
                     fontSize: 20,
                     letterSpacing: 0,
                     color: const Color(0xFF121212))),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 12,
-            ),
+            Spacer(flex: 7),
             Text(
               'Email',
               style: Theme.of(context).textTheme.bodySmall!.copyWith(color: const Color(0xFF121212)),
@@ -41,6 +40,7 @@ class SignIn extends StatelessWidget {
             TextFormField(
               decoration: const InputDecoration(hintText: 'Enter Email'),
             ),
+            Spacer(flex: 4),
             const SizedBox(
               height: 24,
             ),
@@ -72,9 +72,7 @@ class SignIn extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 250,
-            ),
+            Spacer(flex: 3),
             Center(
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -94,9 +92,7 @@ class SignIn extends StatelessWidget {
                     ],
                   )),
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 250,
-            ),
+            Spacer(flex: 3),
             Center(
               child: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -123,6 +119,40 @@ class SignIn extends StatelessWidget {
                 ],
               ),
             ),
+            Spacer(flex: 3),
+            Center(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(
+                    height: SizeConfig.blockSizeVertical * 5.418,
+                    child: AspectRatio(
+                      aspectRatio: 1,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            padding: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 0.667)),
+                        onPressed: () {},
+                        child: SvgPicture.asset('assets/icons/google_logo.svg'),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: SizeConfig.blockSizeHorizontal * 6.67),
+                  SizedBox(
+                      height: SizeConfig.blockSizeVertical * 5.418,
+                      child: AspectRatio(
+                        aspectRatio: 1,
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.white,
+                                padding: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 0.667)),
+                            onPressed: () {},
+                            child: SvgPicture.asset('assets/icons/facebook_logo.svg')),
+                      )),
+                ],
+              ),
+            ),
+            Spacer(flex: 12),
           ],
         ),
       ),
