@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:recipe_app/presentation/screens/content/favorite.dart';
+import 'package:recipe_app/presentation/screens/content/home.dart';
+import 'package:recipe_app/presentation/screens/content/profile.dart';
 
 import '../../platform/size_config.dart';
+import 'content/notification.dart';
 
 class Main extends StatefulWidget {
   const Main({super.key});
@@ -15,7 +19,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    _tabController = TabController(initialIndex: 0, length: 3, vsync: this);
+    _tabController = TabController(initialIndex: 1, length: 4, vsync: this);
     super.initState();
   }
 
@@ -28,10 +32,18 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
           child: SvgPicture.asset('assets/icons/union.svg'), //icon inside button
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        body: Padding(padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 5), child: TabBarView(
-          controller: _tabController,
-          children: [],
-        ),),
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 5),
+          child: TabBarView(
+            controller: _tabController,
+            children: [
+              Home(),
+              Favorite(),
+              Notifications(),
+              Profile(),
+            ],
+          ),
+        ),
         bottomNavigationBar: SizedBox(
           height: 58,
           child: BottomAppBar(
