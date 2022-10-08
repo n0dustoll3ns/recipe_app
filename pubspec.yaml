@@ -44,6 +44,7 @@ flutter:
     - assets/icons/chefshat.png
     - assets/icons/arrow-right.svg
     - assets/icons/google_logo.svg
+    - assets/icons/timer.svg
     - assets/icons/facebook_logo.svg
     - assets/icons/union.svg
     - assets/icons/home.svg

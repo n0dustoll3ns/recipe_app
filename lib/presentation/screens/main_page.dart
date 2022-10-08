@@ -44,7 +44,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
         bottomNavigationBar: SizedBox(
           height: 58,
           child: BottomAppBar(
-            elevation: 2,
+            elevation: 3,
             color: Colors.white,
             shape: const CircularNotchedRectangle(),
             //shape of notch

@@ -23,7 +23,7 @@ class MealCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 SizedBox(
-                  height: SizeConfig.blockSizeVertical * 6.773,
+                  height: SizeConfig.blockSizeVertical * 9.773,
                 ),
                 Expanded(
                   child: Container(
@@ -36,25 +36,25 @@ class MealCard extends StatelessWidget {
                 ),
               ],
             ),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Center(
-                    child:
-                        ClipRRect(borderRadius: BorderRadius.circular(99), child: Image.asset(meal.image))),
-                Text(
-                  meal.name,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xff484848)),
-                ),
-                Spacer(),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 2.667),
-                  child: Row(
+            Padding(
+              padding: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 2.667),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Center(
+                      child:
+                          ClipRRect(borderRadius: BorderRadius.circular(99), child: Image.asset(meal.image))),
+                  Text(
+                    meal.name,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xff484848)),
+                  ),
+                  Spacer(),
+                  Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Column(
@@ -83,10 +83,52 @@ class MealCard extends StatelessWidget {
                           child: Transform.scale(
                               scale: 0.7, child: SvgPicture.asset('assets/icons/favorite.svg')))
                     ],
+                  )
+                ],
+              ),
+            ),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(
+                  height: SizeConfig.blockSizeVertical * 9.333,
+                  child: Align(
+                    alignment: Alignment.bottomRight,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Color(0xffFFE1B3), borderRadius: BorderRadius.all(Radius.circular(20))),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Transform.scale(
+                            scale: 0.7,
+                            child: Icon(Icons.star, color: Color(0xFFFFAD30)),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: SizeConfig.blockSizeHorizontal * 2.4),
+                            child: Text(
+                              '${meal.rating}',
+                              style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xff484848)),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                )
+                ),
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      color: Colors.transparent,
+                    ),
+                    height: SizeConfig.blockSizeVertical * 36.182,
+                  ),
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),

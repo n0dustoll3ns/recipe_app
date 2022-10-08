@@ -84,6 +84,8 @@ class UserRecipe extends StatelessWidget {
                           fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xffA9A9A9)),
                     ),
                     Spacer(),
+                    SvgPicture.asset('assets/icons/timer.svg'),
+                    SizedBox(width: SizeConfig.blockSizeHorizontal * 1.48),
                     Text(
                       '${recipe.duration.inMinutes} mins',
                       style: GoogleFonts.poppins(
