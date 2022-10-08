@@ -8,26 +8,29 @@ class Personal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Hello Jega',
-                style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 20,
-                )),
-            SizedBox(height: SizeConfig.blockSizeVertical * .6),
-            Text('What are you cooking today?',
-                style:
-                    GoogleFonts.poppins(fontWeight: FontWeight.w400, fontSize: 11, color: Color(0XffA9A9A9))),
-          ],
-        ),
-        Spacer(),
-        Image.asset('assets/images/avatar.png')
-      ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 5),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Hello Jega',
+                  style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                  )),
+              SizedBox(height: SizeConfig.blockSizeVertical * .6),
+              Text('What are you cooking today?',
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w400, fontSize: 11, color: Color(0XffA9A9A9))),
+            ],
+          ),
+          Spacer(),
+          Image.asset('assets/images/avatar.png')
+        ],
+      ),
     );
   }
 }

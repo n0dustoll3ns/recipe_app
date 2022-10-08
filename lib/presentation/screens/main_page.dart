@@ -32,17 +32,14 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
           child: SvgPicture.asset('assets/icons/union.svg'), //icon inside button
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 5),
-          child: TabBarView(
-            controller: _tabController,
-            children: [
-              Home(),
-              Favorite(),
-              Notifications(),
-              Profile(),
-            ],
-          ),
+        body: TabBarView(
+          controller: _tabController,
+          children: [
+            Home(),
+            Favorite(),
+            Notifications(),
+            Profile(),
+          ],
         ),
         bottomNavigationBar: SizedBox(
           height: 58,

@@ -13,21 +13,23 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Spacer(flex: 7),
-        Personal(),
-        Spacer(flex: 2),
-        RecipeSearch(),
-        Spacer(flex: 2),
-        NationalCuisine(),
-        Spacer(flex: 2),
-        SizedBox(height: SizeConfig.blockSizeVertical * 36.448, child: PopularRecipes()),
-        Spacer(flex: 2),
-        NewRecipes(),
-        Spacer(flex: 2),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(height: SizeConfig.blockSizeVertical*7.38),
+          Personal(),
+          SizedBox(height: SizeConfig.blockSizeVertical*3.68),
+          RecipeSearch(),
+          SizedBox(height: SizeConfig.blockSizeVertical*1.68),
+          CuisineFilter(),
+          SizedBox(height: SizeConfig.blockSizeVertical*1.68),
+          SizedBox(height: SizeConfig.blockSizeVertical * 36.448, child: PopularRecipes()),
+          SizedBox(height: SizeConfig.blockSizeVertical*1.68),
+          SizedBox(height: SizeConfig.blockSizeVertical * 15.64, child: NewRecipes()),
+          SizedBox(height: SizeConfig.blockSizeVertical*1.68),
+        ],
+      ),
     );
   }
 }

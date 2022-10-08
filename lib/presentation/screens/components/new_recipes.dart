@@ -11,16 +11,20 @@ class NewRecipes extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'New Recipes',
-          style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w600,
-            fontSize: 16,
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 5),
+          child: Text(
+            'New Recipes',
+            style: GoogleFonts.poppins(
+              fontWeight: FontWeight.w600,
+              fontSize: 16,
+            ),
           ),
         ),
         SizedBox(
           height: SizeConfig.blockSizeVertical * 15.650,
           child: ListView(
+            padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 5),
             scrollDirection: Axis.horizontal,
             children: [
               Text('New Recipes'),
