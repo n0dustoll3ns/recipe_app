@@ -28,6 +28,11 @@ flutter:
     - assets/icons/arrow-right.svg
     - assets/icons/google_logo.svg
     - assets/icons/facebook_logo.svg
+    - assets/icons/union.svg
+    - assets/icons/home.svg
+    - assets/icons/notification_bing.svg
+    - assets/icons/profile.svg
+    - assets/icons/favorite.svg
 
   uses-material-design: true
 

@@ -39,7 +39,7 @@ class SocialNetworksAuthButtons extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: SizeConfig.blockSizeVertical * 2.463),
+        SizedBox(height: SizeConfig.blockSizeVertical * 1.463),
         Center(
           child: Row(
             mainAxisSize: MainAxisSize.min,

@@ -5,6 +5,8 @@ import 'package:recipe_app/platform/size_config.dart';
 import 'package:recipe_app/presentation/screens/common/social_web_sign_up_buttons.dart';
 import 'package:recipe_app/presentation/screens/sign_up.dart';
 
+import 'main_page.dart';
+
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
 
@@ -76,7 +78,7 @@ class SignIn extends StatelessWidget {
                               vertical: SizeConfig.blockSizeVertical * 2)),
                       onPressed: () {
                         Navigator.pushReplacement(
-                            context, MaterialPageRoute(builder: (BuildContext context) => const SignIn()));
+                            context, MaterialPageRoute(builder: (BuildContext context) => const Main()));
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
