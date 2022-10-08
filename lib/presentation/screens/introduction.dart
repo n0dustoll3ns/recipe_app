@@ -24,6 +24,7 @@ class Intro extends StatelessWidget {
               SizedBox(height: SizeConfig.blockSizeVertical * 12.807),
               SizedBox(
                 height: SizeConfig.blockSizeVertical * 9.72,
+                width: SizeConfig.blockSizeVertical * 9.72,
                 child: FittedBox(
                   fit: BoxFit.fitHeight,
                   child: Image.asset(

@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/platform/size_config.dart';
-import 'package:recipe_app/presentation/screens/sign_up.dart';
 
-class SignIn extends StatelessWidget {
-  const SignIn({super.key});
+class SignUp extends StatelessWidget {
+  const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,22 +15,19 @@ class SignIn extends StatelessWidget {
       color: const Color(0xFFFF9C00),
     );
     return Scaffold(
-      body: SingleChildScrollView(
-        child: SizedBox(
-          height: SizeConfig.blockSizeVertical * 100,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 5),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * .05),
+        child: SingleChildScrollView(
+          child: SizedBox(
+            height: SizeConfig.blockSizeVertical * 100,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Spacer(flex: 11),
-                Text('Hello,',
-                    style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 30,
-                        letterSpacing: 0,
-                        color: const Color(0xFF121212))),
-                Text('Welcome back!',
+                Spacer(flex: 6),
+                Text('Create an account',
+                    style:
+                        GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 20, color: Colors.black)),
+                Text("Let’s help you set up your account, \nit won’t take long.",
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w400,
                         fontSize: 20,
@@ -74,8 +70,8 @@ class SignIn extends StatelessWidget {
                               horizontal: MediaQuery.of(context).size.width / 4,
                               vertical: SizeConfig.blockSizeVertical * 2)),
                       onPressed: () {
-                        Navigator.pushReplacement(
-                            context, MaterialPageRoute(builder: (BuildContext context) => const SignIn()));
+                        // Navigator.pushReplacement(
+                        //     context, MaterialPageRoute(builder: (BuildContext context) => const SignIn()));
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -151,10 +147,7 @@ class SignIn extends StatelessWidget {
                 Spacer(flex: 7),
                 Center(
                   child: TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                          context, MaterialPageRoute(builder: (BuildContext context) => const SignUp()));
-                    },
+                    onPressed: () {},
                     child: RichText(
                         text: TextSpan(
                       children: [
