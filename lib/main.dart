@@ -14,6 +14,7 @@ class RecipeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
@@ -37,6 +38,7 @@ class RecipeApp extends StatelessWidget {
         textTheme: TextTheme(
           displayMedium:
               GoogleFonts.poppins(height: 1.2, fontWeight: FontWeight.w600, fontSize: 50, letterSpacing: 0),
+          titleLarge: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 30, letterSpacing: 0),
           titleMedium: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 18, letterSpacing: 0),
           bodyMedium: GoogleFonts.poppins(fontWeight: FontWeight.w400, fontSize: 16, letterSpacing: 0),
           bodySmall: GoogleFonts.poppins(fontWeight: FontWeight.w400, fontSize: 14, letterSpacing: 0),
