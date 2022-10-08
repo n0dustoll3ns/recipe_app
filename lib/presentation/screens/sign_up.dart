@@ -3,6 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/platform/size_config.dart';
 
+import 'common/social_web_sign_up_buttons.dart';
+
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
 
@@ -76,7 +78,7 @@ class SignUp extends StatelessWidget {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const Text('Sign in'),
+                          const Text('Sign Up'),
                           const SizedBox(
                             width: 9,
                           ),
@@ -85,64 +87,8 @@ class SignUp extends StatelessWidget {
                       )),
                 ),
                 Spacer(flex: 3),
-                Center(
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.height / 7.5,
-                        height: 0.7,
-                        color: const Color(0XFFD9D9D9),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 5),
-                        child: Text(
-                          'Or Sign in With',
-                          style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w400, fontSize: 11, color: const Color(0XFFD9D9D9)),
-                        ),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.height / 7.5,
-                        height: 0.7,
-                        color: const Color(0XFFD9D9D9),
-                      ),
-                    ],
-                  ),
-                ),
-                Spacer(flex: 3),
-                Center(
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SizedBox(
-                        height: 44,
-                        child: AspectRatio(
-                          aspectRatio: 1,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.white,
-                                padding: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 0.667)),
-                            onPressed: () {},
-                            child: SvgPicture.asset('assets/icons/google_logo.svg'),
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: SizeConfig.blockSizeHorizontal * 6.67),
-                      SizedBox(
-                          height: 44,
-                          child: AspectRatio(
-                            aspectRatio: 1,
-                            child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.white,
-                                    padding: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 0.667)),
-                                onPressed: () {},
-                                child: SvgPicture.asset('assets/icons/facebook_logo.svg')),
-                          )),
-                    ],
-                  ),
+                SocialNetworksAuthButtons(
+                  onPress: () {},
                 ),
                 Spacer(flex: 7),
                 Center(
