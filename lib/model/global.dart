@@ -6,4 +6,5 @@ List<String> cuisines = [
   'French',
   'Vietnam',
   'American',
+  'Greek',
 ];

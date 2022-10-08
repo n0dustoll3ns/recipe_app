@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/platform/size_config.dart';
 import 'package:recipe_app/presentation/screens/components/nationality_filter.dart';
+import 'package:recipe_app/presentation/screens/components/popular_recipes.dart';
 import 'package:recipe_app/presentation/screens/content/personal.dart';
 
 import '../components/new_recipes.dart';
@@ -15,14 +16,14 @@ class Home extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Spacer(
-          flex: 7,
-        ),
+        Spacer(flex: 7),
         Personal(),
         Spacer(flex: 2),
         RecipeSearch(),
         Spacer(flex: 2),
         NationalCuisine(),
+        Spacer(flex: 2),
+        PopularRecipes(),
         Spacer(flex: 2),
         NewRecipes(),
         Spacer(flex: 2),
