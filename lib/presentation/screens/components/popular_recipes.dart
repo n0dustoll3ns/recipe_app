@@ -13,7 +13,7 @@ class PopularRecipes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: SizeConfig.blockSizeVertical * 28.448,
+        height: SizeConfig.blockSizeVertical * 36.448,
         child: ListView.separated(
           padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 5),
           separatorBuilder: (BuildContext context, int index) =>

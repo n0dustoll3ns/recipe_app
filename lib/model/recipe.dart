@@ -13,7 +13,7 @@ class Recipe {
   }) : image = 'assets/images/user_recipes/$imgID.png';
 }
 
-List<Recipe> meals = [
+List<Recipe> userRecipes = [
   Recipe(
       creatorName: 'James Milner',
       name: 'Steak with tomato sauce and bulgur rice.',

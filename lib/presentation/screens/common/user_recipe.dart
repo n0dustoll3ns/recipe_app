@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipe_app/platform/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../model/meal.dart';
 import '../../../model/recipe.dart';
 
 class UserRecipe extends StatelessWidget {
-  const UserRecipe({super.key, required this.meal});
-  final Recipe meal;
+  const UserRecipe({super.key, required this.recipe});
+  final Recipe recipe;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -18,73 +18,81 @@ class UserRecipe extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Column(
-            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(
-                height: SizeConfig.blockSizeVertical * 8.533,
+                height: SizeConfig.blockSizeVertical * 7.533,
               ),
               Expanded(
                 child: Container(
                   decoration: const BoxDecoration(
-                    boxShadow: [BoxShadow(blurRadius: 4)],
+                    boxShadow: [BoxShadow(blurRadius: 6, color: Colors.black12)],
                     borderRadius: BorderRadius.all(Radius.circular(10)),
-                    color: Color(0xffD9D9D9),
+                    color: Color(0xffFFFFFF),
                   ),
-                  height: SizeConfig.blockSizeVertical * 36.182,
                 ),
               ),
             ],
           ),
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Center(
-                  child: ClipRRect(borderRadius: BorderRadius.circular(99), child: Image.asset(meal.image))),
-              Text(
-                meal.name,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
-                style:
-                    GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xff484848)),
-              ),
-              Spacer(),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 2.667),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 2.48),
+            child: Column(
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Time',
-                          style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xffA9A9A9)),
-                        ),
-                        Text(
-                          '${meal.duration.inMinutes} Mins',
-                          style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xff484848)),
-                        ),
-                      ],
+                    Expanded(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '${recipe.name}',
+                            style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xff484848)),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          RatingBar.builder(
+                            itemSize: SizeConfig.blockSizeVertical * 2.4,
+                            initialRating: recipe.rating,
+                            direction: Axis.horizontal,
+                            allowHalfRating: true,
+                            itemCount: 5,
+                            onRatingUpdate: (double value) {},
+                            itemBuilder: (context, _) => Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                    Spacer(),
-                    Container(
-                        width: SizeConfig.blockSizeHorizontal * 6.4,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                        ),
-                        child:
-                            Transform.scale(scale: 0.7, child: SvgPicture.asset('assets/icons/favorite.svg')))
+                    ClipRRect(borderRadius: BorderRadius.circular(99), child: Image.asset(recipe.image))
                   ],
                 ),
-              )
-            ],
+                SizedBox(height: SizeConfig.blockSizeVertical * 0.98),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(99),
+                        child: Image.asset('assets/images/user_photos/${recipe.creatorName}.png')),
+                    SizedBox(width: SizeConfig.blockSizeHorizontal * 0.98),
+                    Text(
+                      '${recipe.creatorName}',
+                      style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xffA9A9A9)),
+                    ),
+                    Spacer(),
+                    Text(
+                      '${recipe.duration.inMinutes} mins',
+                      style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xffA9A9A9)),
+                    )
+                  ],
+                )
+              ],
+            ),
           )
         ],
       ),

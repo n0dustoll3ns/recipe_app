@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/platform/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:recipe_app/presentation/screens/common/user_recipe.dart';
+
+import '../../../model/recipe.dart';
 
 class NewRecipes extends StatelessWidget {
   const NewRecipes({super.key});
@@ -22,21 +25,17 @@ class NewRecipes extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: SizeConfig.blockSizeVertical * 15.650,
-          child: ListView(
-            padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 5),
+          height: SizeConfig.blockSizeVertical * 21.650,
+          child: ListView.separated(
+            padding: EdgeInsets.symmetric(
+              horizontal: SizeConfig.blockSizeHorizontal * 5,
+              vertical: SizeConfig.blockSizeVertical * .650,
+            ),
+            separatorBuilder: (BuildContext context, int index) =>
+                SizedBox(width: SizeConfig.blockSizeHorizontal * 3),
             scrollDirection: Axis.horizontal,
-            children: [
-              Text('New Recipes'),
-              Text('New Recipes'),
-              Text('New Recipes'),
-              Text('New Recipes'),
-              Text('New Recipes'),
-              Text('New Recipes'),
-              Text('New Recipes'),
-              Text('New Recipes'),
-              Text('New Recipes'),
-            ],
+            itemCount: userRecipes.length,
+            itemBuilder: (BuildContext context, int index) => UserRecipe(recipe: userRecipes[index]),
           ),
         ),
       ],
