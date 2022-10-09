@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:recipe_app/presentation/screens/search_page.dart';
 
 import '../../../platform/size_config.dart';
 
@@ -17,6 +18,7 @@ class RecipeSearch extends StatelessWidget {
           children: [
             Expanded(
               child: TextFormField(
+                onTap: () => Navigator.of(context).push(_createRoute()),
                 decoration: InputDecoration(
                     hintText: 'Search Recipe',
                     prefixIcon: Padding(
@@ -38,4 +40,22 @@ class RecipeSearch extends StatelessWidget {
       ),
     );
   }
+}
+
+Route _createRoute() {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => const SearchPage(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      const begin = Offset(0.0, 1.0);
+      const end = Offset.zero;
+      const curve = Curves.ease;
+
+      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+      return SlideTransition(
+        position: animation.drive(tween),
+        child: child,
+      );
+    },
+  );
 }
