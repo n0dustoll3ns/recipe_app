@@ -1,20 +1,23 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:recipe_app/platform/size_config.dart';
 
-class MealTile extends StatelessWidget {
-  const MealTile({super.key});
+import '../../../model/recipe.dart';
 
+class MealTile extends StatelessWidget {
+  const MealTile({super.key, required this.recipe});
+  final Recipe recipe;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: SizeConfig.blockSizeHorizontal * 18.472,
       child: AspectRatio(
         aspectRatio: 1,
-        child: Stack(
-          fit: StackFit.expand,
-          children: [Image.asset('assets/images/search_result/1.png')],
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10.0),
+          child: Stack(
+            fit: StackFit.expand,
+            children: [Image.asset(recipe.image)],
+          ),
         ),
       ),
     );

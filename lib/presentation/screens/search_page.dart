@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/platform/size_config.dart';
 import 'package:recipe_app/presentation/screens/common/meal_tile.dart';
+import '../../model/recipe.dart';
 import 'components/recipe_search.dart';
 
 class SearchPage extends StatelessWidget {
@@ -26,7 +27,7 @@ class SearchPage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(height: SizeConfig.blockSizeVertical * 2.141),
-            Hero(tag: 'searchPanel', child: RecipeSearch()),
+            RecipeSearch(),
             SizedBox(height: SizeConfig.blockSizeVertical * 2.141),
             Align(
               alignment: Alignment.centerLeft,
@@ -40,13 +41,16 @@ class SearchPage extends StatelessWidget {
             ),
             SizedBox(height: SizeConfig.blockSizeVertical * 2.463),
             GridView.builder(
-              shrinkWrap: true,
+                physics: ScrollPhysics(),
+                itemCount: searchRecipes.length,
+                shrinkWrap: true,
+                padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 4),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 1,
+                  crossAxisCount: 2,
                   mainAxisSpacing: SizeConfig.blockSizeHorizontal * 4,
                   crossAxisSpacing: SizeConfig.blockSizeHorizontal * 4,
                 ),
-                itemBuilder: ((context, index) => MealTile()))
+                itemBuilder: ((context, index) => MealTile(recipe: searchRecipes[index])))
           ],
         ),
       ),
