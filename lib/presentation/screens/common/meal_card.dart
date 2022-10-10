@@ -96,7 +96,7 @@ class MealCard extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.bottomRight,
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Color(0xffFFE1B3), borderRadius: BorderRadius.all(Radius.circular(20))),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
