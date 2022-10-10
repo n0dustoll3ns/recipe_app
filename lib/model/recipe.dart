@@ -96,3 +96,30 @@ List<Recipe> searchRecipes = [
       image: 'assets/images/search_result/4.png',
       rating: 3.2),
 ];
+
+List<Recipe> savedRecipes = [
+  Recipe(
+      creatorName: 'Chef John',
+      name: 'Traditional spare ribs baked',
+      duration: const Duration(minutes: 20),
+      image: 'assets/images/saved_recipes/1.png',
+      rating: 3.8),
+  Recipe(
+      creatorName: 'Mark Kelvin',
+      name: 'spice roasted chicken with flavored rice',
+      duration: const Duration(minutes: 32),
+      image: 'assets/images/saved_recipes/2.png',
+      rating: 3.2),
+  Recipe(
+      creatorName: 'Spicy Nelly',
+      name: 'Spicy fried rice mix chicken bali',
+      duration: const Duration(minutes: 15),
+      image: 'assets/images/saved_recipes/3.png',
+      rating: 4.2),
+  Recipe(
+      creatorName: 'Spicy Nelly',
+      name: 'Lamb chops with fruity couscous and mint',
+      duration: const Duration(minutes: 45),
+      image: 'assets/images/saved_recipes/4.png',
+      rating: 4.5),
+];
