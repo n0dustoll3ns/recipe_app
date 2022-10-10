@@ -5,7 +5,8 @@ import 'package:recipe_app/presentation/screens/search_page.dart';
 import '../../../platform/size_config.dart';
 
 class RecipeSearch extends StatelessWidget {
-  const RecipeSearch({super.key});
+  final Function onFilterPress;
+  const RecipeSearch({super.key, required this.onFilterPress});
 
   @override
   Widget build(BuildContext context) {
@@ -13,29 +14,38 @@ class RecipeSearch extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 4),
       child: SizedBox(
         height: 55,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(
-              child: TextFormField(
-                onTap: () => Navigator.of(context).push(_createRoute()),
-                decoration: InputDecoration(
-                    hintText: 'Search Recipe',
-                    prefixIcon: Padding(
-                      padding: EdgeInsets.all(
-                        SizeConfig.blockSizeVertical * 1.631,
-                      ),
-                      child: SvgPicture.asset('assets/icons/search.svg'),
-                    )),
-              ),
+        child: Hero(
+          tag: 'SearchBar',
+          child: Material(
+            type: MaterialType.transparency,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    onTap: () => Navigator.of(context).push(_createRoute()),
+                    decoration: InputDecoration(
+                        hintText: 'Search Recipe',
+                        prefixIcon: Padding(
+                          padding: EdgeInsets.all(
+                            SizeConfig.blockSizeVertical * 1.631,
+                          ),
+                          child: SvgPicture.asset('assets/icons/search.svg'),
+                        )),
+                  ),
+                ),
+                SizedBox(width: SizeConfig.blockSizeHorizontal * 5),
+                AspectRatio(
+                    aspectRatio: 1,
+                    child: ElevatedButton(
+                        onPressed: () {
+                          onFilterPress();
+                        },
+                        child: Transform.scale(
+                            scale: 1.2, child: SvgPicture.asset('assets/icons/setting.svg')))),
+              ],
             ),
-            SizedBox(width: SizeConfig.blockSizeHorizontal * 5),
-            AspectRatio(
-                aspectRatio: 1,
-                child: ElevatedButton(
-                    onPressed: () {},
-                    child: Transform.scale(scale: 1.2, child: SvgPicture.asset('assets/icons/setting.svg')))),
-          ],
+          ),
         ),
       ),
     );

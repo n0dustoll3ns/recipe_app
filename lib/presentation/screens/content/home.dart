@@ -20,7 +20,7 @@ class Home extends StatelessWidget {
           SizedBox(height: SizeConfig.blockSizeVertical * 7.38),
           Personal(),
           SizedBox(height: SizeConfig.blockSizeVertical * 3.68),
-          RecipeSearch(),
+          RecipeSearch(onFilterPress: () {}),
           SizedBox(height: SizeConfig.blockSizeVertical * 1.68),
           CuisineFilter(),
           SizedBox(height: SizeConfig.blockSizeVertical * 1.68),

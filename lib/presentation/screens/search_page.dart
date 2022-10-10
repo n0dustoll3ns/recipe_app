@@ -5,13 +5,36 @@ import 'package:recipe_app/platform/size_config.dart';
 import 'package:recipe_app/presentation/screens/common/meal_tile.dart';
 import '../../model/recipe.dart';
 import 'components/recipe_search.dart';
+import 'components/search_filter.dart';
 
-class SearchPage extends StatelessWidget {
+class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
+
+  @override
+  State<SearchPage> createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+  @override
+  void initState() {
+    _controller = AnimationController(
+      value: 0,
+      duration: const Duration(seconds: 1),
+      vsync: this,
+    );
+    _animation = CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeInOutQuart,
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
@@ -27,15 +50,28 @@ class SearchPage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(height: SizeConfig.blockSizeVertical * 2.141),
-            RecipeSearch(),
+            RecipeSearch(
+              onFilterPress: () => showFilters(),
+            ),
             SizedBox(height: SizeConfig.blockSizeVertical * 2.141),
             Align(
               alignment: Alignment.centerLeft,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 4),
-                child: Text(
-                  'Recent Search',
-                  style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 16, color: Colors.black),
+                child: Row(
+                  children: [
+                    Text(
+                      'Recent Search',
+                      style:
+                          GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 16, color: Colors.black),
+                    ),
+                    Spacer(),
+                    Text(
+                      '255 results',
+                      style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xffA9A9A9)),
+                    )
+                  ],
                 ),
               ),
             ),
@@ -54,6 +90,18 @@ class SearchPage extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: SizeTransition(
+        sizeFactor: _animation,
+        child: SearchFilter(onAccept: () => showFilters()),
+      ),
     );
+  }
+
+  Future<void> showFilters() async {
+    if (_animation.status != AnimationStatus.completed) {
+      await _controller.forward();
+    } else {
+      await _controller.animateBack(0, duration: const Duration(seconds: 1));
+    }
   }
 }
