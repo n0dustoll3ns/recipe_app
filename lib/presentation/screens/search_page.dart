@@ -40,8 +40,9 @@ class SearchPage extends StatelessWidget {
             ),
             SizedBox(height: SizeConfig.blockSizeVertical * 2.463),
             GridView.builder(
+              shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
+                  crossAxisCount: 1,
                   mainAxisSpacing: SizeConfig.blockSizeHorizontal * 4,
                   crossAxisSpacing: SizeConfig.blockSizeHorizontal * 4,
                 ),

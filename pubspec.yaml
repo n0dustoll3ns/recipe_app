@@ -36,6 +36,10 @@ flutter:
     - assets/images/user_recipes/3.png
     - assets/images/user_recipes/4.png
     - assets/images/user_recipes/5.png
+    - assets/images/search_result/1.png
+    - assets/images/search_result/2.png
+    - assets/images/search_result/3.png
+    - assets/images/search_result/4.png
     - assets/images/user_photos/James Milner.png
     - assets/images/user_photos/Laura wilson.png
     - assets/images/user_photos/Lucas Moura.png

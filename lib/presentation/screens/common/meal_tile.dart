@@ -9,12 +9,12 @@ class MealTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: SizeConfig.blockSizeHorizontal*18.472,
+      width: SizeConfig.blockSizeHorizontal * 18.472,
       child: AspectRatio(
         aspectRatio: 1,
         child: Stack(
           fit: StackFit.expand,
-          
+          children: [Image.asset('assets/images/search_result/1.png')],
         ),
       ),
     );
