@@ -50,6 +50,7 @@ flutter:
     - assets/images/saved_recipes/3.png
     - assets/images/saved_recipes/4.png
     - assets/icons/chefshat.png
+    - assets/icons/3dots.svg
     - assets/icons/arrow-right.svg
     - assets/icons/google_logo.svg
     - assets/icons/timer.svg

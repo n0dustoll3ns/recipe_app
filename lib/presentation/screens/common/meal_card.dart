@@ -75,7 +75,7 @@ class MealCard extends StatelessWidget {
                         ],
                       ),
                       Spacer(),
-                      FavoriteLabel(),
+                      const FavoriteLabel(),
                     ],
                   )
                 ],
