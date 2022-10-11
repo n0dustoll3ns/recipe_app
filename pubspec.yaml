@@ -45,6 +45,10 @@ flutter:
     - assets/images/user_photos/Lucas Moura.png
     - assets/images/user_photos/Isabella Ethan.png
     - assets/images/user_photos/Miquel Ferran.png
+    - assets/images/saved_recipes/1.png
+    - assets/images/saved_recipes/2.png
+    - assets/images/saved_recipes/3.png
+    - assets/images/saved_recipes/4.png
     - assets/icons/chefshat.png
     - assets/icons/arrow-right.svg
     - assets/icons/google_logo.svg

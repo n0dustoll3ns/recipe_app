@@ -4,6 +4,7 @@ import 'package:recipe_app/platform/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../model/meal.dart';
+import 'favorite_label.dart';
 
 class MealCard extends StatelessWidget {
   const MealCard({super.key, required this.meal});
@@ -74,14 +75,7 @@ class MealCard extends StatelessWidget {
                         ],
                       ),
                       Spacer(),
-                      Container(
-                          width: SizeConfig.blockSizeHorizontal * 6.4,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Transform.scale(
-                              scale: 0.7, child: SvgPicture.asset('assets/icons/favorite.svg')))
+                      FavoriteLabel(),
                     ],
                   )
                 ],
