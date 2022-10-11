@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/platform/size_config.dart';
-import 'package:recipe_app/presentation/screens/common/social_web_sign_up_buttons.dart';
+import 'package:recipe_app/presentation/common/social_web_sign_up_buttons.dart';
 import 'package:recipe_app/presentation/screens/sign_up.dart';
 
 import 'main_page.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/platform/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:recipe_app/presentation/screens/common/user_recipe.dart';
+import 'package:recipe_app/presentation/common/user_recipe.dart';
 
 import '../../../model/recipe.dart';
 

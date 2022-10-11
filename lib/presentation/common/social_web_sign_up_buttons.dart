@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../platform/size_config.dart';
+import '../../platform/size_config.dart';
 
 class SocialNetworksAuthButtons extends StatelessWidget {
   const SocialNetworksAuthButtons({super.key, required this.onPress});

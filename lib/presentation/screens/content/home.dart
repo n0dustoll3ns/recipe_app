@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
           PopularRecipes(),
           SizedBox(height: SizeConfig.blockSizeVertical * 1.68),
           NewRecipes(),
-          SizedBox(height: SizeConfig.blockSizeVertical * 5.31),
+          SizedBox(height: SizeConfig.blockSizeVertical * 15.31),
         ],
       ),
     );

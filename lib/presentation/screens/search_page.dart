@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/platform/size_config.dart';
-import 'package:recipe_app/presentation/screens/common/meal_tile.dart';
+import 'package:recipe_app/presentation/common/meal_tile.dart';
 import '../../model/recipe.dart';
 import 'components/recipe_search.dart';
 import 'components/search_filter.dart';

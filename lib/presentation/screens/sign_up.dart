@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/platform/size_config.dart';
 import 'package:recipe_app/presentation/screens/sign_in.dart';
 
-import 'common/social_web_sign_up_buttons.dart';
+import '../common/social_web_sign_up_buttons.dart';
 import 'main_page.dart';
 
 class SignUp extends StatefulWidget {

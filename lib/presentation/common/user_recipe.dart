@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipe_app/platform/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../model/recipe.dart';
+import '../../model/recipe.dart';
 
 class UserRecipe extends StatelessWidget {
   const UserRecipe({super.key, required this.recipe});

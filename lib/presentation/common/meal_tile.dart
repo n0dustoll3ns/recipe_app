@@ -3,7 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_app/platform/size_config.dart';
 
-import '../../../model/recipe.dart';
+import '../../model/recipe.dart';
+import 'rating_sticker.dart';
 
 class MealTile extends StatelessWidget {
   const MealTile({super.key, required this.recipe});
@@ -38,23 +39,7 @@ class MealTile extends StatelessWidget {
                       child: DecoratedBox(
                         decoration: const BoxDecoration(
                             color: Color(0xffFFE1B3), borderRadius: BorderRadius.all(Radius.circular(20))),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Transform.scale(
-                              scale: 0.7,
-                              child: Icon(Icons.star, color: Color(0xFFFFAD30)),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(right: SizeConfig.blockSizeHorizontal * 2.4),
-                              child: Text(
-                                '${recipe.rating}',
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xff000000)),
-                              ),
-                            ),
-                          ],
-                        ),
+                        child: RatingSticker(rating: recipe.rating),
                       ),
                     ),
                     Spacer(),
