@@ -51,7 +51,7 @@ class MealTile extends StatelessWidget {
                     ),
                     SizedBox(height: SizeConfig.blockSizeHorizontal * 1.5),
                     Text(
-                      'By ${recipe.creatorName}',
+                      'By ${recipe.creator}',
                       maxLines: 1,
                       style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w600, fontSize: 8, color: Color(0xffA9A9A9)),

@@ -47,7 +47,7 @@ class UserRecipe extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            '${recipe.name}',
+                            recipe.name,
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xff484848)),
                             overflow: TextOverflow.ellipsis,
@@ -76,10 +76,12 @@ class UserRecipe extends StatelessWidget {
                   children: [
                     ClipRRect(
                         borderRadius: BorderRadius.circular(99),
-                        child: Image.asset('assets/images/user_photos/${recipe.creatorName}.png')),
+                        child: SizedBox(
+                            width: SizeConfig.blockSizeHorizontal * 6.67,
+                            child: AspectRatio(aspectRatio: 1, child: Image.asset(recipe.creator.image)))),
                     SizedBox(width: SizeConfig.blockSizeHorizontal * 0.98),
                     Text(
-                      '${recipe.creatorName}',
+                      recipe.creator.name,
                       style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xffA9A9A9)),
                     ),

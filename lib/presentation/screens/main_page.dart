@@ -48,11 +48,9 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
             elevation: 3,
             color: Colors.white,
             shape: const CircularNotchedRectangle(),
-            //shape of notch
             notchMargin: 7, //notche margin between floating button and bottom appbar
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              //children inside bottom appbar
               children: <Widget>[
                 Spacer(flex: 1),
                 IconButton(
