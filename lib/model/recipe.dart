@@ -1,3 +1,8 @@
+import 'dart:math';
+
+import 'package:recipe_app/model/ingridient.dart';
+import 'package:recipe_app/model/step.dart';
+
 import 'creator.dart';
 
 class Recipe {
@@ -6,13 +11,19 @@ class Recipe {
   final Duration duration;
   final String image;
   final double rating;
+  final List<Ingridient> ingridients;
+  final List<RecipeStep> steps;
   Recipe({
     required this.creator,
     required this.name,
     required this.duration,
     required this.image,
     required this.rating,
-  });
+  })  : ingridients = List.generate(Random().nextInt(7) + 4, (index) {
+          var food = products[Random().nextInt(13)];
+          return Ingridient(name: food.name, weight: (Random().nextInt(5) + 1) * 100);
+        }),
+        steps = List.generate(Random().nextInt(4) + 3, (index) => RecipeStep());
 }
 
 List<Recipe> userRecipes = [
@@ -124,4 +135,4 @@ List<Recipe> savedRecipes = [
       duration: const Duration(minutes: 45),
       image: 'assets/images/saved_recipes/4.png',
       rating: 4.5),
-];      
+];
