@@ -5,7 +5,7 @@ import 'package:recipe_app/presentation/screens/content/home.dart';
 import 'package:recipe_app/presentation/screens/content/profile.dart';
 
 import '../../platform/size_config.dart';
-import 'content/notification.dart';
+import 'content/notifications.dart';
 
 class Main extends StatefulWidget {
   const Main({super.key});
