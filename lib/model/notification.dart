@@ -6,57 +6,15 @@ class NotificationMessage {
   final String title = 'New Recipe Alert!';
   final String text = lorem(paragraphs: 1, words: Random().nextInt(5) + 5);
   final bool unseen = Random().nextBool();
-  final DateTime dateTime;
-  NotificationMessage({required this.dateTime});
+  final DateTime dateTime = DateTime(
+    DateTime.now().year,
+    DateTime.now().month,
+    DateTime.now().day - Random().nextInt(3),
+    DateTime.now().hour - Random().nextInt(24),
+    DateTime.now().minute - Random().nextInt(59),
+  );
+  NotificationMessage();
 }
 
-List<NotificationMessage> notifications = [
-  NotificationMessage(
-      dateTime: DateTime(
-    DateTime.now().year,
-    DateTime.now().month,
-    DateTime.now().day,
-    DateTime.now().hour,
-    DateTime.now().minute - 10,
-  )),
-  NotificationMessage(
-      dateTime: DateTime(
-    DateTime.now().year,
-    DateTime.now().month,
-    DateTime.now().day,
-    DateTime.now().hour,
-    DateTime.now().minute - 28,
-  )),
-  NotificationMessage(
-      dateTime: DateTime(
-    DateTime.now().year,
-    DateTime.now().month,
-    DateTime.now().day,
-    DateTime.now().hour - 1,
-    DateTime.now().minute - 30,
-  )),
-  NotificationMessage(
-      dateTime: DateTime(
-    DateTime.now().year,
-    DateTime.now().month,
-    DateTime.now().day - 1,
-    DateTime.now().hour - 1,
-    DateTime.now().minute - 30,
-  )),
-  NotificationMessage(
-      dateTime: DateTime(
-    DateTime.now().year,
-    DateTime.now().month,
-    DateTime.now().day - 1,
-    DateTime.now().hour - 2,
-    DateTime.now().minute - 32,
-  )),
-  NotificationMessage(
-      dateTime: DateTime(
-    DateTime.now().year,
-    DateTime.now().month,
-    DateTime.now().day - 1,
-    DateTime.now().hour - 2,
-    DateTime.now().minute - 45,
-  )),
-];
+List<NotificationMessage> notifications =
+    List.generate(3 + Random().nextInt(7), (index) => NotificationMessage());
