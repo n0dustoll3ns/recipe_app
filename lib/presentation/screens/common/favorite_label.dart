@@ -19,7 +19,7 @@ class _FavoriteLabelState extends State<FavoriteLabel> {
   Widget build(BuildContext context) {
     return Container(
         width: SizeConfig.blockSizeHorizontal * 6.4,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           shape: BoxShape.circle,
         ),

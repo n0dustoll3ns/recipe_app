@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipe_app/platform/size_config.dart';
+// ignore: depend_on_referenced_packages
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/presentation/common/rating_sticker.dart';
 import 'package:recipe_app/presentation/screens/common/favorite_label.dart';
-import 'package:recipe_app/presentation/screens/content/favorite.dart';
 
 import '../../model/meal.dart';
 
@@ -54,9 +53,9 @@ class MealCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xff484848)),
+                        fontWeight: FontWeight.w600, fontSize: 14, color: const Color(0xff484848)),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -67,17 +66,17 @@ class MealCard extends StatelessWidget {
                           Text(
                             'Time',
                             style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xffA9A9A9)),
+                                fontWeight: FontWeight.w400, fontSize: 11, color: const Color(0xffA9A9A9)),
                           ),
                           Text(
                             '${meal.duration.inMinutes} Mins',
                             style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xff484848)),
+                                fontWeight: FontWeight.w600, fontSize: 14, color: const Color(0xff484848)),
                           ),
                         ],
                       ),
-                      Spacer(),
-                      FavoriteLabel()
+                      const Spacer(),
+                      const FavoriteLabel()
                     ],
                   )
                 ],

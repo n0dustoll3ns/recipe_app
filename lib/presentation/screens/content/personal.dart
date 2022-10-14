@@ -24,10 +24,10 @@ class Personal extends StatelessWidget {
               SizedBox(height: SizeConfig.blockSizeVertical * .6),
               Text('What are you cooking today?',
                   style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w400, fontSize: 11, color: Color(0XffA9A9A9))),
+                      fontWeight: FontWeight.w400, fontSize: 11, color: const Color(0XffA9A9A9))),
             ],
           ),
-          Spacer(),
+          const Spacer(),
           Image.asset('assets/images/avatar.png')
         ],
       ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipe_app/platform/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -52,9 +51,9 @@ class MealCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xff484848)),
+                        fontWeight: FontWeight.w600, fontSize: 14, color: const Color(0xff484848)),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -65,16 +64,16 @@ class MealCard extends StatelessWidget {
                           Text(
                             'Time',
                             style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xffA9A9A9)),
+                                fontWeight: FontWeight.w400, fontSize: 11, color: const Color(0xffA9A9A9)),
                           ),
                           Text(
                             '${meal.duration.inMinutes} Mins',
                             style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xff484848)),
+                                fontWeight: FontWeight.w600, fontSize: 14, color: const Color(0xff484848)),
                           ),
                         ],
                       ),
-                      Spacer(),
+                      const Spacer(),
                       const FavoriteLabel(),
                     ],
                   )
@@ -97,14 +96,14 @@ class MealCard extends StatelessWidget {
                         children: [
                           Transform.scale(
                             scale: 0.7,
-                            child: Icon(Icons.star, color: Color(0xFFFFAD30)),
+                            child: const Icon(Icons.star, color: Color(0xFFFFAD30)),
                           ),
                           Padding(
                             padding: EdgeInsets.only(right: SizeConfig.blockSizeHorizontal * 2.4),
                             child: Text(
                               '${meal.rating}',
                               style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xff484848)),
+                                  fontWeight: FontWeight.w400, fontSize: 11, color: const Color(0xff484848)),
                             ),
                           ),
                         ],

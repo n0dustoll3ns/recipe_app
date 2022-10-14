@@ -27,7 +27,7 @@ class SignIn extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Spacer(flex: 11),
+                const Spacer(flex: 11),
                 Text('Hello,',
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w600,
@@ -40,25 +40,25 @@ class SignIn extends StatelessWidget {
                         fontSize: 20,
                         letterSpacing: 0,
                         color: const Color(0xFF121212))),
-                Spacer(flex: 7),
+                const Spacer(flex: 7),
                 Text(
                   'Email',
                   style: Theme.of(context).textTheme.bodySmall!.copyWith(color: const Color(0xFF121212)),
                 ),
-                Spacer(flex: 1),
+                const Spacer(flex: 1),
                 TextFormField(
                   decoration: const InputDecoration(hintText: 'Enter Email'),
                 ),
-                Spacer(flex: 4),
+                const Spacer(flex: 4),
                 Text(
                   'Enter password',
                   style: Theme.of(context).textTheme.bodySmall!.copyWith(color: const Color(0xFF121212)),
                 ),
-                Spacer(flex: 1),
+                const Spacer(flex: 1),
                 TextFormField(
                   decoration: const InputDecoration(hintText: 'Enter Password'),
                 ),
-                Spacer(flex: 3),
+                const Spacer(flex: 3),
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: TextButton(
@@ -69,7 +69,7 @@ class SignIn extends StatelessWidget {
                     ),
                   ),
                 ),
-                Spacer(flex: 3),
+                const Spacer(flex: 3),
                 Center(
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -91,9 +91,9 @@ class SignIn extends StatelessWidget {
                         ],
                       )),
                 ),
-                Spacer(flex: 3),
+                const Spacer(flex: 3),
                 SocialNetworksAuthButtons(onPress: () {}),
-                Spacer(flex: 7),
+                const Spacer(flex: 7),
                 Center(
                   child: TextButton(
                     onPressed: () {
@@ -111,7 +111,7 @@ class SignIn extends StatelessWidget {
                     )),
                   ),
                 ),
-                Spacer(flex: 12),
+                const Spacer(flex: 12),
               ],
             ),
           ),

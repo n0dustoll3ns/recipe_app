@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipe_app/platform/size_config.dart';
+// ignore: depend_on_referenced_packages
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../model/recipe.dart';
@@ -49,7 +50,7 @@ class UserRecipe extends StatelessWidget {
                           Text(
                             recipe.name,
                             style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xff484848)),
+                                fontWeight: FontWeight.w600, fontSize: 14, color: const Color(0xff484848)),
                             overflow: TextOverflow.ellipsis,
                           ),
                           RatingBar.builder(
@@ -59,7 +60,7 @@ class UserRecipe extends StatelessWidget {
                             allowHalfRating: true,
                             itemCount: 5,
                             onRatingUpdate: (double value) {},
-                            itemBuilder: (context, _) => Icon(
+                            itemBuilder: (context, _) => const Icon(
                               Icons.star,
                               color: Colors.amber,
                             ),
@@ -83,15 +84,15 @@ class UserRecipe extends StatelessWidget {
                     Text(
                       recipe.creator.name,
                       style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xffA9A9A9)),
+                          fontWeight: FontWeight.w400, fontSize: 11, color: const Color(0xffA9A9A9)),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     SvgPicture.asset('assets/icons/timer.svg'),
                     SizedBox(width: SizeConfig.blockSizeHorizontal * 1.48),
                     Text(
                       '${recipe.duration.inMinutes} mins',
                       style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xffA9A9A9)),
+                          fontWeight: FontWeight.w400, fontSize: 11, color: const Color(0xffA9A9A9)),
                     )
                   ],
                 )

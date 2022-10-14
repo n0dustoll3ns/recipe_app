@@ -4,7 +4,6 @@ import 'package:recipe_app/presentation/screens/content/favorite.dart';
 import 'package:recipe_app/presentation/screens/content/home.dart';
 import 'package:recipe_app/presentation/screens/content/profile.dart';
 
-import '../../platform/size_config.dart';
 import 'content/notifications.dart';
 
 class Main extends StatefulWidget {
@@ -35,7 +34,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         body: TabBarView(
           controller: _tabController,
-          children: [
+          children: const [
             Home(),
             Favorite(),
             Notifications(),
@@ -52,7 +51,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                Spacer(flex: 1),
+                const Spacer(flex: 1),
                 IconButton(
                   icon: SvgPicture.asset(
                     'assets/icons/home.svg',
@@ -64,7 +63,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
                     });
                   },
                 ),
-                Spacer(flex: 1),
+                const Spacer(flex: 1),
                 IconButton(
                   icon: SvgPicture.asset(
                     'assets/icons/favorite.svg',
@@ -76,7 +75,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
                     });
                   },
                 ),
-                Spacer(flex: 3),
+                const Spacer(flex: 3),
                 IconButton(
                   icon: SvgPicture.asset(
                     'assets/icons/notification_bing.svg',
@@ -88,7 +87,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
                     });
                   },
                 ),
-                Spacer(flex: 1),
+                const Spacer(flex: 1),
                 IconButton(
                   icon: SvgPicture.asset(
                     'assets/icons/profile.svg',
@@ -100,7 +99,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
                     });
                   },
                 ),
-                Spacer(flex: 1),
+                const Spacer(flex: 1),
               ],
             ),
           ),

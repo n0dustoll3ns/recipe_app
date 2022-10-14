@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/platform/size_config.dart';
 import 'package:recipe_app/presentation/screens/components/nationality_filter.dart';
 import 'package:recipe_app/presentation/screens/components/popular_recipes.dart';
@@ -18,15 +17,15 @@ class Home extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(height: SizeConfig.blockSizeVertical * 7.38),
-          Personal(),
+          const Personal(),
           SizedBox(height: SizeConfig.blockSizeVertical * 3.68),
           RecipeSearch(onFilterPress: () {}),
           SizedBox(height: SizeConfig.blockSizeVertical * 1.68),
-          CuisineFilter(),
+          const CuisineFilter(),
           SizedBox(height: SizeConfig.blockSizeVertical * 1.68),
-          PopularRecipes(),
+          const PopularRecipes(),
           SizedBox(height: SizeConfig.blockSizeVertical * 1.68),
-          NewRecipes(),
+          const NewRecipes(),
           SizedBox(height: SizeConfig.blockSizeVertical * 15.31),
         ],
       ),

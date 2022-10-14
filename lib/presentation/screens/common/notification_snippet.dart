@@ -3,7 +3,6 @@ import 'package:recipe_app/platform/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../model/notification.dart';
-import '../../../model/step.dart';
 import '../components/seen_indicator.dart';
 
 class NotificationSnippet extends StatelessWidget {

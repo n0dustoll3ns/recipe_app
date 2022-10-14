@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../model/global.dart';
 import '../../../model/notification.dart';
 import '../../../platform/size_config.dart';
-import '../common/notification_snippet.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'notifications_section.dart';
 

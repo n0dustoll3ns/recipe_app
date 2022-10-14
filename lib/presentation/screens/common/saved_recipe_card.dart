@@ -57,16 +57,20 @@ class SavedRecipeCard extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  '${recipe.name}',
+                                  recipe.name,
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                   style: GoogleFonts.poppins(
-                                      fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xffffffff)),
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 14,
+                                      color: const Color(0xffffffff)),
                                 ),
                                 Text(
                                   'By ${recipe.creator}',
                                   style: GoogleFonts.poppins(
-                                      fontWeight: FontWeight.w400, fontSize: 8, color: Color(0xffD9D9D9)),
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 8,
+                                      color: const Color(0xffD9D9D9)),
                                 ),
                               ],
                             ),
@@ -80,10 +84,10 @@ class SavedRecipeCard extends StatelessWidget {
                             child: Text(
                               '${recipe.duration.inMinutes} min',
                               style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xffD9D9D9)),
+                                  fontWeight: FontWeight.w400, fontSize: 11, color: const Color(0xffD9D9D9)),
                             ),
                           ),
-                          FavoriteLabel()
+                          const FavoriteLabel()
                         ],
                       )
                     ],

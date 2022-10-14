@@ -25,7 +25,7 @@ class NotificationsSection extends StatelessWidget {
         ),
         SizedBox(height: SizeConfig.blockSizeVertical * 1.71),
         ListView.separated(
-          physics: ScrollPhysics(),
+          physics: const ScrollPhysics(),
           shrinkWrap: true,
           separatorBuilder: (context, index) => SizedBox(height: SizeConfig.blockSizeVertical * 2.46),
           padding: EdgeInsets.symmetric(

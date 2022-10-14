@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/platform/size_config.dart';
 import 'package:recipe_app/presentation/common/meal_tile.dart';
@@ -42,7 +42,8 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
         foregroundColor: const Color(0xff292D32),
         title: Text(
           'Search recipes',
-          style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 18, color: Color(0xff181818)),
+          style:
+              GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 18, color: const Color(0xff181818)),
         ),
       ),
       body: SingleChildScrollView(
@@ -65,11 +66,11 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
                       style:
                           GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 16, color: Colors.black),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Text(
                       '255 results',
                       style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xffA9A9A9)),
+                          fontWeight: FontWeight.w400, fontSize: 11, color: const Color(0xffA9A9A9)),
                     )
                   ],
                 ),
@@ -77,7 +78,7 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
             ),
             SizedBox(height: SizeConfig.blockSizeVertical * 2.463),
             GridView.builder(
-                physics: ScrollPhysics(),
+                physics: const ScrollPhysics(),
                 itemCount: searchRecipes.length,
                 shrinkWrap: true,
                 padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 4),

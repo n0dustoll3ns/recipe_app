@@ -1,5 +1,6 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_app/platform/size_config.dart';
 
@@ -42,19 +43,19 @@ class MealTile extends StatelessWidget {
                         child: RatingSticker(rating: recipe.rating),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Text(
-                      '${recipe.name}',
+                      recipe.name,
                       maxLines: 2,
                       style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w600, fontSize: 11, color: Color(0xffFFFFFF)),
+                          fontWeight: FontWeight.w600, fontSize: 11, color: const Color(0xffFFFFFF)),
                     ),
                     SizedBox(height: SizeConfig.blockSizeHorizontal * 1.5),
                     Text(
                       'By ${recipe.creator}',
                       maxLines: 1,
                       style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w600, fontSize: 8, color: Color(0xffA9A9A9)),
+                          fontWeight: FontWeight.w600, fontSize: 8, color: const Color(0xffA9A9A9)),
                     ),
                   ],
                 ),

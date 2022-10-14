@@ -56,13 +56,13 @@ class _RecipePageState extends State<RecipePage> with SingleTickerProviderStateM
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xff000000)),
+                            fontWeight: FontWeight.w600, fontSize: 14, color: const Color(0xff000000)),
                       ),
                     ),
                     Text(
                       '(13k Reviews)',
                       style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xffa9a9a9)),
+                          fontWeight: FontWeight.w400, fontSize: 14, color: const Color(0xffa9a9a9)),
                     ),
                   ],
                 ),
@@ -82,16 +82,16 @@ class _RecipePageState extends State<RecipePage> with SingleTickerProviderStateM
                         Text(
                           widget.recipe.creator.name,
                           style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xff121212)),
+                              fontWeight: FontWeight.w600, fontSize: 14, color: const Color(0xff121212)),
                         ),
                         Text(
                           widget.recipe.creator.location ?? 'unknown',
                           style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xffA9A9A9)),
+                              fontWeight: FontWeight.w400, fontSize: 11, color: const Color(0xffA9A9A9)),
                         ),
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     ElevatedButton(
                         onPressed: () {},
                         child: Text(
@@ -156,7 +156,7 @@ class _RecipePageState extends State<RecipePage> with SingleTickerProviderStateM
                 ),
                 _tabController.index == 0
                     ? ListView.separated(
-                        physics: ScrollPhysics(),
+                        physics: const ScrollPhysics(),
                         shrinkWrap: true,
                         separatorBuilder: (context, index) =>
                             SizedBox(height: SizeConfig.blockSizeVertical * 2.46),
@@ -165,7 +165,7 @@ class _RecipePageState extends State<RecipePage> with SingleTickerProviderStateM
                         itemCount: widget.recipe.ingridients.length,
                       )
                     : ListView.separated(
-                        physics: ScrollPhysics(),
+                        physics: const ScrollPhysics(),
                         shrinkWrap: true,
                         separatorBuilder: (context, index) =>
                             SizedBox(height: SizeConfig.blockSizeVertical * 2.46),

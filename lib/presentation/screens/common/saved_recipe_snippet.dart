@@ -57,12 +57,14 @@ class SavedRecipeSnippet extends StatelessWidget {
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xffffffff)),
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14,
+                                    color: const Color(0xffffffff)),
                               ),
                               Text(
                                 '',
                                 style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w400, fontSize: 8, color: Color(0xffD9D9D9)),
+                                    fontWeight: FontWeight.w400, fontSize: 8, color: const Color(0xffD9D9D9)),
                               ),
                             ],
                           ),
@@ -76,10 +78,10 @@ class SavedRecipeSnippet extends StatelessWidget {
                           child: Text(
                             '${recipe.duration.inMinutes} min',
                             style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w400, fontSize: 11, color: Color(0xffD9D9D9)),
+                                fontWeight: FontWeight.w400, fontSize: 11, color: const Color(0xffD9D9D9)),
                           ),
                         ),
-                        FavoriteLabel()
+                        const FavoriteLabel()
                       ],
                     )
                   ],

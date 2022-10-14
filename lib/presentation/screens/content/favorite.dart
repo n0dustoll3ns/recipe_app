@@ -20,7 +20,7 @@ class Favorite extends StatelessWidget {
                   style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 20))),
           SizedBox(height: SizeConfig.blockSizeVertical * 3.68),
           ListView.separated(
-            physics: ScrollPhysics(),
+            physics: const ScrollPhysics(),
             shrinkWrap: true,
             separatorBuilder: (context, index) => SizedBox(height: SizeConfig.blockSizeVertical * 2.46),
             padding: EdgeInsets.symmetric(
