@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:recipe_app/model/global.dart';
 import 'package:recipe_app/model/notification.dart';
 import 'package:recipe_app/presentation/screens/common/notification_snippet.dart';
 import 'package:recipe_app/presentation/screens/components/notification_sorter.dart';
@@ -24,6 +25,9 @@ class _NotificationsState extends State<Notifications> with SingleTickerProvider
 
   @override
   Widget build(BuildContext context) {
+    print(notifications.length);
+    var notificationsList = notifications.where(notificationFilters[_tabController.index]).toList();
+    print(notificationsList.length);
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -106,7 +110,7 @@ class _NotificationsState extends State<Notifications> with SingleTickerProvider
             ),
           ),
           SizedBox(height: SizeConfig.blockSizeVertical * 1.36),
-          NotificationSorter(list: notifications),
+          NotificationSorter(list: notificationsList),
           SizedBox(height: SizeConfig.blockSizeVertical * 5.31),
         ],
       ),

@@ -77,6 +77,8 @@ flutter:
     - assets/icons/favorite.svg
     - assets/icons/search.svg
     - assets/icons/setting.svg
+    - assets/icons/notification_unread.svg
+    - assets/icons/notification_read.svg
 
   uses-material-design: true
 
