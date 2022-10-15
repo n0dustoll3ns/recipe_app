@@ -1,13 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:recipe_app/presentation/screens/recipe_page.dart';
 
 import '../../../model/recipe.dart';
 import '../../platform/size_config.dart';
+import '../screens/recipe_page.dart';
 import 'favorite_label.dart';
 import 'rating_sticker.dart';
+import 'recipe_snippet_context_menu.dart';
 
 class SavedRecipeCard extends StatelessWidget {
   final Recipe recipe;
@@ -15,31 +15,7 @@ class SavedRecipeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoContextMenu(
-      actions: [
-        CupertinoContextMenuAction(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          trailingIcon: CupertinoIcons.share,
-          child: const Text("Share"),
-        ),
-        CupertinoContextMenuAction(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          trailingIcon: CupertinoIcons.down_arrow,
-          child: const Text("Save To Gallery"),
-        ),
-        CupertinoContextMenuAction(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          isDestructiveAction: true,
-          trailingIcon: CupertinoIcons.delete,
-          child: const Text("Delete"),
-        )
-      ],
+    return RecipeCardContextMenu(
       child: GestureDetector(
         onTap: () => Navigator.push(
             context, MaterialPageRoute(builder: (BuildContext context) => RecipePage(recipe: recipe))),
@@ -92,7 +68,7 @@ class SavedRecipeCard extends StatelessWidget {
                                         color: const Color(0xffffffff)),
                                   ),
                                   Text(
-                                    'By ${recipe.creator}',
+                                    'By ${recipe.creator.name}',
                                     style: GoogleFonts.poppins(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 8,

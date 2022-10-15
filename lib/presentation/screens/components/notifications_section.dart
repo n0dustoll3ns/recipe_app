@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../model/notification.dart';
 import '../../../platform/size_config.dart';
-import '../../common/common/notification_snippet.dart';
+import '../../common/notification_snippet.dart';
 
 class NotificationsSection extends StatelessWidget {
   final List<NotificationMessage> list;

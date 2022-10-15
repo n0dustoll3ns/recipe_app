@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:recipe_app/platform/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../model/notification.dart';
-import '../screens/components/seen_indicator.dart';
+import '../../model/notification.dart';
+import 'read_indicator.dart';
 
 class NotificationSnippet extends StatelessWidget {
   final NotificationMessage notification;

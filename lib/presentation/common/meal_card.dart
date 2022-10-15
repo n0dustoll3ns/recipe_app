@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../model/meal.dart';
 import 'favorite_label.dart';
+import 'rating_sticker.dart';
 
 class MealCard extends StatelessWidget {
   const MealCard({super.key, required this.meal});
@@ -88,27 +89,7 @@ class MealCard extends StatelessWidget {
                   height: SizeConfig.blockSizeVertical * 9.333,
                   child: Align(
                     alignment: Alignment.bottomRight,
-                    child: Container(
-                      decoration: const BoxDecoration(
-                          color: Color(0xffFFE1B3), borderRadius: BorderRadius.all(Radius.circular(20))),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Transform.scale(
-                            scale: 0.7,
-                            child: const Icon(Icons.star, color: Color(0xFFFFAD30)),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(right: SizeConfig.blockSizeHorizontal * 2.4),
-                            child: Text(
-                              '${meal.rating}',
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w400, fontSize: 11, color: const Color(0xff484848)),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: RatingSticker(rating: meal.rating,),
                   ),
                 ),
                 Expanded(
