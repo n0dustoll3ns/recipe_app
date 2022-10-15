@@ -27,12 +27,9 @@ class _FavoriteLabelState extends State<FavoriteLabel> {
             aspectRatio: 1,
             child: Transform.scale(
                 scale: 0.7,
-                child: IconButton(
-                  padding: EdgeInsets.zero,
-                  onPressed: () {
-                    setState(() => isInFavourite = !isInFavourite);
-                  },
-                  icon: SvgPicture.asset('assets/icons/favorite.svg',
+                child: GestureDetector(
+                  onTap: () => setState(() => isInFavourite = !isInFavourite),
+                  child: SvgPicture.asset('assets/icons/favorite.svg',
                       color: isInFavourite ? Theme.of(context).primaryColor : null),
                 ))));
   }

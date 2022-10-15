@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipe_app/platform/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:recipe_app/presentation/screens/common/favorite_label.dart';
+import 'package:recipe_app/presentation/common/rating_sticker.dart';
 
 import '../../../model/recipe.dart';
-import '../../common/rating_sticker.dart';
+import 'favorite_label.dart';
 
 class SavedRecipeSnippet extends StatelessWidget {
   final Recipe recipe;

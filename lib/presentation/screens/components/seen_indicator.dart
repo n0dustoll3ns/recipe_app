@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipe_app/platform/size_config.dart';
 
-class SeenIndicator extends StatelessWidget {
+class ReadIndicator extends StatelessWidget {
   final bool seen;
-  const SeenIndicator({super.key, required this.seen});
+  const ReadIndicator({super.key, required this.seen});
 
   @override
   Widget build(BuildContext context) {

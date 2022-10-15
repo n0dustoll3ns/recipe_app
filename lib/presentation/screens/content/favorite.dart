@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../model/recipe.dart';
 import '../../../platform/size_config.dart';
-import '../common/saved_recipe_card.dart';
+import '../../common/saved_recipe_card.dart';
 
 class Favorite extends StatelessWidget {
   const Favorite({super.key});

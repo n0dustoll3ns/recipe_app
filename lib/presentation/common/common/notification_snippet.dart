@@ -3,7 +3,7 @@ import 'package:recipe_app/platform/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../model/notification.dart';
-import '../components/seen_indicator.dart';
+import '../../screens/components/seen_indicator.dart';
 
 class NotificationSnippet extends StatelessWidget {
   final NotificationMessage notification;
@@ -38,7 +38,7 @@ class NotificationSnippet extends StatelessWidget {
               ],
             ),
           ),
-          SeenIndicator(
+          ReadIndicator(
             seen: !notification.unread,
           )
         ],

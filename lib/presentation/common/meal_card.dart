@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/platform/size_config.dart';
-// ignore: depend_on_referenced_packages
 import 'package:google_fonts/google_fonts.dart';
-import 'package:recipe_app/presentation/common/rating_sticker.dart';
-import 'package:recipe_app/presentation/screens/common/favorite_label.dart';
 
-import '../../model/meal.dart';
+import '../../../model/meal.dart';
+import 'favorite_label.dart';
 
 class MealCard extends StatelessWidget {
   const MealCard({super.key, required this.meal});
@@ -76,7 +74,7 @@ class MealCard extends StatelessWidget {
                         ],
                       ),
                       const Spacer(),
-                      const FavoriteLabel()
+                      const FavoriteLabel(),
                     ],
                   )
                 ],
@@ -90,7 +88,27 @@ class MealCard extends StatelessWidget {
                   height: SizeConfig.blockSizeVertical * 9.333,
                   child: Align(
                     alignment: Alignment.bottomRight,
-                    child: RatingSticker(rating: meal.rating),
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          color: Color(0xffFFE1B3), borderRadius: BorderRadius.all(Radius.circular(20))),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Transform.scale(
+                            scale: 0.7,
+                            child: const Icon(Icons.star, color: Color(0xFFFFAD30)),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: SizeConfig.blockSizeHorizontal * 2.4),
+                            child: Text(
+                              '${meal.rating}',
+                              style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w400, fontSize: 11, color: const Color(0xff484848)),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
                 Expanded(

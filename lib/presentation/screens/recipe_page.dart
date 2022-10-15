@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipe_app/platform/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:recipe_app/presentation/screens/common/recipe_step_snippet.dart';
-import 'package:recipe_app/presentation/screens/common/ingridient_card.dart';
+import 'package:recipe_app/presentation/common/common/recipe_step_snippet.dart';
+import 'package:recipe_app/presentation/common/common/ingridient_card.dart';
 
 import '../../model/recipe.dart';
-import 'common/saved_recipe_snippet.dart';
+import '../common/common/saved_recipe_snippet.dart';
 
 class RecipePage extends StatefulWidget {
   final Recipe recipe;
