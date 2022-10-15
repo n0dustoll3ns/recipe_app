@@ -40,3 +40,10 @@ List<bool Function(NotificationMessage message)> notificationFilters = [
   (NotificationMessage message) => message.unread == false,
   (NotificationMessage message) => message.unread == true,
 ];
+
+List<String> mainPageIcons = [
+  'assets/icons/home',
+  'assets/icons/favorite',
+  'assets/icons/notification_bing',
+  'assets/icons/profile',
+];

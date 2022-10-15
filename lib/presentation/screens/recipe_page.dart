@@ -1,6 +1,10 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:recipe_app/presentation/common/recipe_snippet_context_menu.dart';
 
 import '../../model/recipe.dart';
 import '../../platform/size_config.dart';
@@ -32,7 +36,79 @@ class _RecipePageState extends State<RecipePage> with SingleTickerProviderStateM
         actions: [
           Padding(
             padding: EdgeInsets.only(right: SizeConfig.blockSizeHorizontal * 4),
-            child: SvgPicture.asset('assets/icons/3dots.svg'),
+            child: PopupMenuButton<int>(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
+                itemBuilder: (context) => <PopupMenuEntry<int>>[
+                      PopupMenuItem<int>(
+                        value: 0,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(CupertinoIcons.arrowshape_turn_up_right_fill),
+                            SizedBox(
+                              width: SizeConfig.blockSizeHorizontal * 2.467,
+                            ),
+                            Text(
+                              "Share",
+                              style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w400, fontSize: 14, color: const Color(0xff121212)),
+                            ),
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem<int>(
+                        value: 1,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(CupertinoIcons.star_fill),
+                            SizedBox(
+                              width: SizeConfig.blockSizeHorizontal * 2.467,
+                            ),
+                            Text(
+                              "Save To Gallery",
+                              style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w400, fontSize: 14, color: const Color(0xff121212)),
+                            ),
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem<int>(
+                        value: 2,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(CupertinoIcons.ellipses_bubble_fill),
+                            SizedBox(
+                              width: SizeConfig.blockSizeHorizontal * 2.467,
+                            ),
+                            Text(
+                              "Review",
+                              style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w400, fontSize: 14, color: const Color(0xff121212)),
+                            ),
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem<int>(
+                        value: 3,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(CupertinoIcons.bookmark_solid),
+                            SizedBox(
+                              width: SizeConfig.blockSizeHorizontal * 2.467,
+                            ),
+                            Text(
+                              "Save",
+                              style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w400, fontSize: 14, color: const Color(0xff121212)),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                child: SvgPicture.asset('assets/icons/3dots.svg')),
           ),
         ],
       ),

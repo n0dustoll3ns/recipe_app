@@ -75,6 +75,10 @@ flutter:
     - assets/icons/notification_bing.svg
     - assets/icons/profile.svg
     - assets/icons/favorite.svg
+    - assets/icons/home_selected.svg
+    - assets/icons/notification_bing_selected.svg
+    - assets/icons/profile_selected.svg
+    - assets/icons/favorite_selected.svg
     - assets/icons/search.svg
     - assets/icons/setting.svg
     - assets/icons/notification_unread.svg

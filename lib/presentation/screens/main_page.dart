@@ -4,6 +4,7 @@ import 'package:recipe_app/presentation/screens/content/favorite.dart';
 import 'package:recipe_app/presentation/screens/content/home.dart';
 import 'package:recipe_app/presentation/screens/content/profile.dart';
 
+import '../../model/global.dart';
 import 'content/notifications.dart';
 
 class Main extends StatefulWidget {
@@ -54,8 +55,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
                 const Spacer(flex: 1),
                 IconButton(
                   icon: SvgPicture.asset(
-                    'assets/icons/home.svg',
-                    color: _tabController.index == 0 ? Theme.of(context).primaryColor : null,
+                    _tabController.index == 0 ? '${mainPageIcons[0]}_selected.svg' : '${mainPageIcons[0]}.svg',
                   ),
                   onPressed: () {
                     setState(() {
@@ -66,8 +66,9 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
                 const Spacer(flex: 1),
                 IconButton(
                   icon: SvgPicture.asset(
-                    'assets/icons/favorite.svg',
-                    color: _tabController.index == 1 ? Theme.of(context).primaryColor : null,
+                    _tabController.index == 1
+                        ? '${mainPageIcons[1]}_selected.svg'
+                        : '${mainPageIcons[1]}.svg',
                   ),
                   onPressed: () {
                     setState(() {
@@ -78,8 +79,9 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
                 const Spacer(flex: 3),
                 IconButton(
                   icon: SvgPicture.asset(
-                    'assets/icons/notification_bing.svg',
-                    color: _tabController.index == 2 ? Theme.of(context).primaryColor : null,
+                    _tabController.index == 2
+                        ? '${mainPageIcons[2]}_selected.svg'
+                        : '${mainPageIcons[2]}.svg',
                   ),
                   onPressed: () {
                     setState(() {
@@ -90,8 +92,9 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
                 const Spacer(flex: 1),
                 IconButton(
                   icon: SvgPicture.asset(
-                    'assets/icons/profile.svg',
-                    color: _tabController.index == 3 ? Theme.of(context).primaryColor : null,
+                    _tabController.index == 3
+                        ? '${mainPageIcons[3]}_selected.svg'
+                        : '${mainPageIcons[3]}.svg',
                   ),
                   onPressed: () {
                     setState(() {
