@@ -6,7 +6,9 @@ import '../../../platform/size_config.dart';
 
 class RecipeSearch extends StatelessWidget {
   final Function onFilterPress;
-  const RecipeSearch({super.key, required this.onFilterPress});
+  final bool? autoFocus;
+  final bool? readOnly;
+  const RecipeSearch({super.key, required this.onFilterPress, this.autoFocus, this.readOnly});
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,7 @@ class RecipeSearch extends StatelessWidget {
               children: [
                 Expanded(
                   child: TextFormField(
+                    autofocus: autoFocus ?? false,
                     onTap: () => Navigator.of(context).push(_createRoute()),
                     decoration: InputDecoration(
                         hintText: 'Search Recipe',

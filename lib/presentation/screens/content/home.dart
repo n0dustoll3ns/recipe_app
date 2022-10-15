@@ -7,7 +7,7 @@ import 'package:recipe_app/presentation/screens/components/popular_recipes.dart'
 import 'package:recipe_app/presentation/screens/content/personal.dart';
 
 import '../components/new_recipes.dart';
-import '../components/recipe_search.dart';
+import '../components/search_bar.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -21,7 +21,11 @@ class Home extends StatelessWidget {
           SizedBox(height: SizeConfig.blockSizeVertical * 7.38),
           const Personal(),
           SizedBox(height: SizeConfig.blockSizeVertical * 3.68),
-          RecipeSearch(onFilterPress: () {}),
+          RecipeSearch(
+            autoFocus: false,
+            onFilterPress: () {},
+            readOnly: true,
+          ),
           SizedBox(height: SizeConfig.blockSizeVertical * 1.68),
           const CuisineFilter(),
           SizedBox(height: SizeConfig.blockSizeVertical * 1.68),

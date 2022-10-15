@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/platform/size_config.dart';
 import 'package:recipe_app/presentation/common/meal_tile.dart';
 import '../../model/recipe.dart';
-import 'components/recipe_search.dart';
+import 'components/search_bar.dart';
 import 'components/search_filter.dart';
 
 class SearchPage extends StatefulWidget {
@@ -53,6 +53,8 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
             SizedBox(height: SizeConfig.blockSizeVertical * 2.141),
             RecipeSearch(
               onFilterPress: () => showFilters(),
+              autoFocus: true,
+              readOnly: false,
             ),
             SizedBox(height: SizeConfig.blockSizeVertical * 2.141),
             Align(
