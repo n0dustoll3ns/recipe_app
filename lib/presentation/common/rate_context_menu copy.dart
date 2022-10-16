@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
+// ignore: file_names
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../platform/size_config.dart';
@@ -16,8 +17,8 @@ class RateContextMenu extends StatelessWidget {
         Container(
           padding: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 4),
           width: SizeConfig.blockSizeHorizontal * 40,
-          decoration:
-              BoxDecoration(color: Color(0xFFFFFFFF), borderRadius: BorderRadius.all(Radius.circular(10))),
+          decoration: const BoxDecoration(
+              color: Color(0xFFFFFFFF), borderRadius: BorderRadius.all(Radius.circular(10))),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,9 +26,7 @@ class RateContextMenu extends StatelessWidget {
               DefaultTextStyle(
                 style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w400, fontSize: 14, color: const Color(0xff121212)),
-                child: Text(
-                  'Rate recipe',
-                ),
+                child: const Text('Rate recipe'),
               ),
               SizedBox(height: SizeConfig.blockSizeHorizontal * 2),
               RatingBar.builder(
@@ -47,11 +46,11 @@ class RateContextMenu extends StatelessWidget {
                 scale: 0.75,
                 child: CupertinoButton(
                   // padding: EdgeInsets.symmetric(vertical: 3),
-                  color: Color(0xffFFAD30),
+                  color: const Color(0xffFFAD30),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text('Send'),
+                  child: const Text('Send'),
                 ),
               )
             ],

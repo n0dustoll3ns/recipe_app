@@ -1,10 +1,7 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:recipe_app/presentation/common/recipe_snippet_context_menu.dart';
 
 import '../../model/recipe.dart';
 import '../../platform/size_config.dart';
@@ -44,7 +41,7 @@ class _RecipePageState extends State<RecipePage> with SingleTickerProviderStateM
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(CupertinoIcons.arrowshape_turn_up_right_fill),
+                            const Icon(CupertinoIcons.arrowshape_turn_up_right_fill),
                             SizedBox(
                               width: SizeConfig.blockSizeHorizontal * 2.467,
                             ),
@@ -61,7 +58,7 @@ class _RecipePageState extends State<RecipePage> with SingleTickerProviderStateM
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(CupertinoIcons.star_fill),
+                            const Icon(CupertinoIcons.star_fill),
                             SizedBox(
                               width: SizeConfig.blockSizeHorizontal * 2.467,
                             ),
@@ -78,7 +75,7 @@ class _RecipePageState extends State<RecipePage> with SingleTickerProviderStateM
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(CupertinoIcons.ellipses_bubble_fill),
+                            const Icon(CupertinoIcons.ellipses_bubble_fill),
                             SizedBox(
                               width: SizeConfig.blockSizeHorizontal * 2.467,
                             ),
@@ -95,7 +92,7 @@ class _RecipePageState extends State<RecipePage> with SingleTickerProviderStateM
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(CupertinoIcons.bookmark_solid),
+                            const Icon(CupertinoIcons.bookmark_solid),
                             SizedBox(
                               width: SizeConfig.blockSizeHorizontal * 2.467,
                             ),
