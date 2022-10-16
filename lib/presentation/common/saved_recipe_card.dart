@@ -58,21 +58,25 @@ class SavedRecipeCard extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    recipe.name,
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
+                                  DefaultTextStyle(
                                     style: GoogleFonts.poppins(
                                         fontWeight: FontWeight.w600,
                                         fontSize: 14,
                                         color: const Color(0xffffffff)),
+                                    child: Text(
+                                      recipe.name,
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
                                   ),
-                                  Text(
-                                    'By ${recipe.creator.name}',
+                                  DefaultTextStyle(
                                     style: GoogleFonts.poppins(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 8,
                                         color: const Color(0xffD9D9D9)),
+                                    child: Text(
+                                      'By ${recipe.creator.name}',
+                                    ),
                                   ),
                                 ],
                               ),
@@ -83,12 +87,14 @@ class SavedRecipeCard extends StatelessWidget {
                             ),
                             Padding(
                               padding: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 1),
-                              child: Text(
-                                '${recipe.duration.inMinutes} min',
+                              child: DefaultTextStyle(
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w400,
                                     fontSize: 11,
                                     color: const Color(0xffD9D9D9)),
+                                child: Text(
+                                  '${recipe.duration.inMinutes} min',
+                                ),
                               ),
                             ),
                             const FavoriteLabel()

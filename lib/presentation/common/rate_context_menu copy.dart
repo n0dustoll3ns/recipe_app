@@ -22,10 +22,12 @@ class RateContextMenu extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                'Rate recipe',
+              DefaultTextStyle(
                 style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w400, fontSize: 14, color: const Color(0xff121212)),
+                child: Text(
+                  'Rate recipe',
+                ),
               ),
               SizedBox(height: SizeConfig.blockSizeHorizontal * 2),
               RatingBar.builder(

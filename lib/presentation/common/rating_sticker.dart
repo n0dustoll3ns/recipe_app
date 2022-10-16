@@ -26,10 +26,14 @@ class RatingSticker extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(right: SizeConfig.blockSizeHorizontal * 2.4),
-                child: Text(
-                  '$rating',
+                child: DefaultTextStyle(
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400, fontSize: 11, color: const Color(0xff484848)),
+                  child: Text(
+                    '$rating',
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w400, fontSize: 11, color: const Color(0xff484848)),
+                  ),
                 ),
               ),
             ],
